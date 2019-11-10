@@ -9,6 +9,7 @@ static unsigned Tz = 2; //Время обслуживания одного по�
 static const unsigned N = 10; //Колличество касс
 static unsigned T = 100; //Время работы модели
 static till tills[N]; //Массив касс
+static std::vector<int> buyers;
 
 int main(int argc, char *argv[])
 {
