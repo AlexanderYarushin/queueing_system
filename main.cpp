@@ -12,13 +12,13 @@ struct till{
     double Tk = 0;
 };
 
-static double Tz = 1; //Время обслуживания одного покупателя
-static const unsigned N = 15; //Колличество касс
+static double Tz = 2; //Время обслуживания одного покупателя
+static const unsigned N = 20; //Колличество касс
 static double T = 100; //Время работы модели
 static till tills[N]; //Массив касс
 static unsigned tillsAcc[N+1]; //Аккумулятор
 static std::vector<double> buyers; //Массив покупателей
-static double a = 1.0/5.0; // Частота появления покупателя
+static double a = 1 / 5.0; // Частота появления покупателя
 static unsigned not_served = 0; //Количество необслуженых покупателей
 static unsigned repeatCount = 10000; //Количество итераций для подсчета среднего значения
 
@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 
     }
     for(unsigned i = 0; i < N; ++i){
-        std::cout << "Till #" << (i+1) << " - " << tillsAcc[i] / (repeatCount * 1.0) << std::endl;
+        std::cout << "Till #" << (i+1) << ": " << tillsAcc[i] / (repeatCount * 1.0) << std::endl;
     }
     std::cout << "Not served: " << tillsAcc[N] / (repeatCount * 1.0) << std::endl;
 
